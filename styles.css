@@ -1,105 +1,330 @@
+
+/* ================================================
+==                Gem Spritesheet                ==
+================================================ */
+
 .gem-header {
     height: 25px;
     width: 25px;
-    opacity: 60%;
 }
 
-.gem-crimson {
-    background: url(./img/gemstones.png) 0 0;
-    background-size: 1700% 100%;
-}
-
-.gem-ember {
-    background: url(./img/gemstones.png) -25px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-sol {
-    background: url(./img/gemstones.png) -50px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-jade {
-    background: url(./img/gemstones.png) -75px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-cerulean {
-    background: url(./img/gemstones.png) -100px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-violet {
-    background: url(./img/gemstones.png) -125px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-prismatic {
-    background: url(./img/gemstones.png) -150px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-ethereal {
-    background: url(./img/gemstones.png) -175px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-eternal {
-    background: url(./img/gemstones.png) -200px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-dark {
-    background: url(./img/gemstones.png) -250px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-light {
-    background: url(./img/gemstones.png) -275px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-bright {
-    background: url(./img/gemstones.png) -300px 0;
-    background-size: 1700% 100%;
-}
-
-.gem-selection .gem-empty {
-    background: url(./img/gemstones.png) -325px 0;
-    background-size: 1700% 100%;
-}
-
-    .gem-selection .gem-empty:hover {
-        background: url(./img/gemstones.png) -225px 0;
+    .gem-crimson {
+        background: url(./img/gemstones.png) 0 0;
         background-size: 1700% 100%;
     }
 
-.gem-selection .gem-dark {
-    background: url(./img/gemstones.png) -350px 0;
-    background-size: 1700% 100%;
-}
+    .gem-ember {
+        background: url(./img/gemstones.png) -25px 0;
+        background-size: 1700% 100%;
+    }
 
-    .gem-selection .gem-dark:hover {
+    .gem-sol {
+        background: url(./img/gemstones.png) -50px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-jade {
+        background: url(./img/gemstones.png) -75px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-cerulean {
+        background: url(./img/gemstones.png) -100px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-violet {
+        background: url(./img/gemstones.png) -125px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-prismatic {
+        background: url(./img/gemstones.png) -150px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-ethereal {
+        background: url(./img/gemstones.png) -175px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-eternal {
+        background: url(./img/gemstones.png) -200px 0;
+        background-size: 1700% 100%;
+    }
+
+    .gem-dark {
         background: url(./img/gemstones.png) -250px 0;
         background-size: 1700% 100%;
     }
 
-.gem-selection .gem-light {
-    background: url(./img/gemstones.png) -375px 0;
-    background-size: 1700% 100%;
-}
-
-    .gem-selection .gem-light:hover {
+    .gem-light {
         background: url(./img/gemstones.png) -275px 0;
         background-size: 1700% 100%;
     }
 
-.gem-selection .gem-bright {
-    background: url(./img/gemstones.png) -400px 0;
-    background-size: 1700% 100%;
-}
-
-    .gem-selection .gem-bright:hover {
+    .gem-bright {
         background: url(./img/gemstones.png) -300px 0;
         background-size: 1700% 100%;
     }
+
+/*                  Selection Gems
+======================================================== */
+
+.gem-selection {
+    height: 50px;
+    width: 50px;
+}
+
+.gem-selection.gem-empty {
+    background: url(./img/gemstones.png) -650px 0;
+    background-size: 1700% 100%;
+}
+
+    .gem-selection.gem-empty:hover {
+        background: url(./img/gemstones.png) -450px 0;
+        background-size: 1700% 100%;
+    }
+
+.gem-selection.gem-dark {
+    background: url(./img/gemstones.png) -700px 0;
+    background-size: 1700% 100%;
+}
+
+    .gem-selection.gem-dark:hover {
+        background: url(./img/gemstones.png) -500px 0;
+        background-size: 1700% 100%;
+    }
+
+.gem-selection.gem-light {
+    background: url(./img/gemstones.png) -750px 0;
+    background-size: 1700% 100%;
+}
+
+    .gem-selection.gem-light:hover {
+        background: url(./img/gemstones.png) -550px 0;
+        background-size: 1700% 100%;
+    }
+
+.gem-selection.gem-bright {
+    background: url(./img/gemstones.png) -800px 0;
+    background-size: 1700% 100%;
+}
+
+    .gem-selection.gem-bright:hover {
+        background: url(./img/gemstones.png) -600px 0;
+        background-size: 1700% 100%;
+    }
+
+/* ================================================
+==                   Header                      ==
+================================================ */
+
+.header {
+    text-align: center;
+}
+
+h1 {
+    border-bottom: 2px dotted black;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+/* ======================================== */
+.header-status-container {
+    display: inline-block;
+    text-align: center;
+}
+
+    .header-status-gems {
+        background: hsl(0, 80%, 85%);
+        width: 480px;
+        display: inline-flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+    }
+
+        .gem-div {
+            display: flex;
+            width: 138px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+            .gem-div > span {
+                margin-top: auto;
+            }
+
+            .gem-div span:first-of-type {
+                margin-left: 5px;
+            }
+
+            .gem-div span:last-of-type {
+                margin-left: auto;
+            }
+
+.conversion-container {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+    .conversion-gems-div {
+        border: 1px solid black;
+    }
+
+.loading-div {
+    text-align: center;
+    vertical-align: middle;
+    height: 200px;
+}
+
+    .loading-span {
+        position: relative;
+        top: 50%;
+        font-size: 1.5rem;
+    }
+
+/* ================================================
+==              Personal Display                 ==
+================================================ */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal-display {
+    display: flex;
+    height: 140px;
+    width: 800px;
+    border: 2px solid black;
+    margin: 5px 0;
+}
+
+/* ======================================== */
+.perf-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 50%;
+}
+
+    .perf-header {
+        height: 40%;
+    }
+
+    .perf-selection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .perf-selection-active {
+
+    }
+
+        .perf-confirmation {
+            display: flex;
+            flex-wrap: wrap;
+            height: 50px;
+            width: 130px;
+            display: none;
+        }
+
+            .perf-msg {
+                height: 30px;
+                width: 130px;
+            }
+
+            .perf-accept {
+                height: 20px;
+                width: 55px;
+                margin-right: 10px;
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .perf-decline {
+                height: 20px;
+                width: 55px;
+                border: 1px solid black;
+                text-align: center;
+            }
+
+.gem-selection {
+    margin: 0 2.5px;
+}
+
+/* ======================================== */
+.status-container {
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    width: 50%;
+    vertical-align: top;
+}
+
+    .status-header {
+        margin-left: 100px;
+        height: 40%;
+    }
+
+    .status-body {
+        display: flex;
+        margin-left: 85px;
+        margin-bottom: 30px;
+        height: 40%;
+    }
+
+        .status-gem-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 86px;
+            height: 72px;
+            border: 1px solid black;
+        }
+
+            .status-gem {
+                height: 50px;
+                width: 50px;
+                background-size: 1700% 100%;
+            }
+
+        .status-devotion-container {
+            display: flex;
+            flex-direction: column;
+            height: 72px;
+            width: 150px;
+            border: 1px solid black;
+        }
+
+            .devotion-div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 42px;
+                width: 142px;
+                border: 1px solid black;
+                margin: 3px;
+            }
+
+            .devotion-tier {
+
+            }
+
+            .devotion-points {
+
+            }
+
+
+
