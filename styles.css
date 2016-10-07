@@ -13,45 +13,90 @@
         background-size: 1700% 100%;
     }
 
+        .status-gem-crimson {
+            background: url(./img/gemstones.png) 0 0;
+            background-size: 1700% 100%;
+        }
+
     .gem-ember {
         background: url(./img/gemstones.png) -25px 0;
         background-size: 1700% 100%;
     }
+
+        .status-gem-ember {
+            background: url(./img/gemstones.png) -50px 0;
+            background-size: 1700% 100%;
+        }
 
     .gem-sol {
         background: url(./img/gemstones.png) -50px 0;
         background-size: 1700% 100%;
     }
 
+        .status-gem-sol {
+            background: url(./img/gemstones.png) -100px 0;
+            background-size: 1700% 100%;
+        }
+
     .gem-jade {
         background: url(./img/gemstones.png) -75px 0;
         background-size: 1700% 100%;
     }
+
+        .status-gem-jade {
+            background: url(./img/gemstones.png) -150px 0;
+            background-size: 1700% 100%;
+        }
 
     .gem-cerulean {
         background: url(./img/gemstones.png) -100px 0;
         background-size: 1700% 100%;
     }
 
+        .status-gem-cerulean {
+            background: url(./img/gemstones.png) -200px 0;
+            background-size: 1700% 100%;
+        }
+
     .gem-violet {
         background: url(./img/gemstones.png) -125px 0;
         background-size: 1700% 100%;
     }
+
+        .status-gem-violet {
+            background: url(./img/gemstones.png) -250px 0;
+            background-size: 1700% 100%;
+        }
 
     .gem-prismatic {
         background: url(./img/gemstones.png) -150px 0;
         background-size: 1700% 100%;
     }
 
+        .status-gem-prismatic {
+            background: url(./img/gemstones.png) -300px 0;
+            background-size: 1700% 100%;
+        }
+
     .gem-ethereal {
         background: url(./img/gemstones.png) -175px 0;
         background-size: 1700% 100%;
     }
 
+        .status-gem-ethereal {
+            background: url(./img/gemstones.png) -350px 0;
+            background-size: 1700% 100%;
+        }
+
     .gem-eternal {
         background: url(./img/gemstones.png) -200px 0;
         background-size: 1700% 100%;
     }
+
+        .status-gem-eternal {
+            background: url(./img/gemstones.png) -400px 0;
+            background-size: 1700% 100%;
+        }
 
     .gem-dark {
         background: url(./img/gemstones.png) -250px 0;
