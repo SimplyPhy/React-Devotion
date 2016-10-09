@@ -107,28 +107,110 @@ PersonalStatus.propTypes = {
 
 var DailyPerformance = React.createClass({
   propTypes: {
-    setPerformance: React.PropTypes.func.isRequired,
-  };
+    addPoints: React.PropTypes.func.isRequired,
+  },
 
   getInitialState: function() {
     return {
-      setPerformance: React.PropTypes.func.isRequired,
+      gemBools: ['', '', '', ''], // empty, dark, light, bright
+      confirmBool: '',
+      points: 0,
     };
   },
 
   selectPerf: function(perf) {
+    this.state.gemBools.forEach(function(gemBool){gemBool = 'fade-out'});
+
     if (perf === 0) {
-      // animate other gems away, and make confirmation box appear
+      this.state.gemBools[0] = 'select-empty';
     } else if (perf === 1) {
-      // animate other gems away, and make confirmation box appear
-      // animate gem-dark 50px left
+      this.state.gemBools[1] = 'select-dark';
+      this.state.points = 1;
     } else if (perf === 2) {
-      // animate other gems away, and make confirmation box appear
-      // animate gem-light 100px left
+      this.state.gemBools[2] = 'select-light';
+      this.state.points = 2;
     } else if (perf === 3) {
-      // animate other gems away, and make confirmation box appear
-      // animate gem-bright 150px left
+      this.state.gemBools[3] = 'select-bright';
+      this.state.points = 3;
     }
+
+    this.state.confirmBool = 'perf-selection-active';
+    // this.setState();
+  },
+
+  submit: function(confirm) {
+
+    var fadeIn = [0,1,2,3];
+
+    if (this.state.points === 0) {
+      if (confirm) {
+        setState({gemBools[0]: 'select-empty-confirm'});
+        //this.state.gemBools[0] = 'select-empty-confirm';
+      } else {
+        setState({gemBools[0]: ''});
+        // this.state.gemBools[0] = '';
+        fadeIn = [1,2,3];
+      }
+    } else if (this.state.points === 1) {
+      if (confirm) {
+        setState({gemBools[1]: 'select-dark-confirm'});
+        // this.state.gemBools[1] = 'select-dark-confirm';
+      } else {
+        setState({gemBools[1]: 'select-dark-decline'});
+        // this.state.gemBools[1] = 'select-dark-decline';
+        fadeIn = [0,2,3];
+      }
+    } else if (this.state.points === 2) {
+      if (confirm) {
+        setState({gemBools[2]: 'select-light-confirm'});
+        // this.state.gemBools[2] = 'select-light-confirm';
+      } else {
+        setState({gemBools[2]: 'select-light-decline'});
+        // this.state.gemBools[2] = 'select-light-decline';
+        fadeIn = [0,1,3];
+      }
+    } else if (this.state.points === 3) {
+      if (confirm) {
+        setState({gemBools[3]: 'select-bright-confirm'});
+        // this.state.gemBools[3] = 'select-bright-confirm';
+      } else {
+        setState({gemBools[3]: 'select-bright-decline'});
+        // this.state.gemBools[3] = 'select-bright-decline';
+        fadeIn = [0,1,2];
+      }
+    }
+
+    setState({confirmBool: 'perf-selection-inactive'});
+    // this.state.confirmBool = 'perf-selection-inactive';
+
+    // setTimeout(function() {
+    //   this.state.confirmBool = 'display-none';
+    //   this.fadeIn.forEach(function(gem){this.state.gemBools[gem] = 'fade-in'});
+    // }, 750);
+
+    // this.setState(this.state);
+
+    // if (confirm === true) {
+    //   this.props.addPoints(this.state.points);
+    //   this.state.points = 0;
+    // } else if (confirm === false) {
+    //   this.state.points = 0;
+    // }
+
+    /*** I don't know if this should happen before or after setState ***/
+    // setTimeout(function() {
+    //   this.state.gemBools.forEach(function(gemBool){gemBool = 'fade-in'});
+    //   this.state.confirmBool = 'display-none';
+    // }, 750);
+
+  },
+
+  addPoints: function(points) {
+
+  },
+
+  decline: function(points) {
+
   },
 
   render: function() {
@@ -138,14 +220,14 @@ var DailyPerformance = React.createClass({
           <h3>Today's Performance</h3>
         </div>
         <div className="perf-selection">
-          <div className="gem-selection gem-empty" onClick={this.selectPerf(0)}></div>
-          <div className="gem-selection gem-dark" onClick={this.selectPerf(1)}></div>
-          <div className="gem-selection gem-light" onClick={this.selectPerf(2)}></div>
-          <div className="gem-selection gem-bright" onClick={this.selectPerf(3)}></div>
+          <div className={"gem-selection gem-empty " + this.state.gemBools[0]} onClick={this.selectPerf(0)}></div>
+          <div className={"gem-selection gem-dark " + this.state.gemBools[1]} onClick={this.selectPerf(1)}></div>
+          <div className={"gem-selection gem-light " + this.state.gemBools[2]} onClick={this.selectPerf(2)}></div>
+          <div className={"gem-selection gem-bright " + this.state.gemBools[3]} onClick={this.selectPerf(3)}></div>
           <div className="perf-confirmation">
-            <div className="perf-msg">Confirm Selection?</div>
-            <button className="perf-accept">Yes</button>
-            <button className="perf-decline">No</button>
+            <div className={"perf-msg " + this.state.confirmBool}>Confirm Selection?</div>
+            <button className="perf-accept" onClick={this.submit(true)}>Yes</button>
+            <button className="perf-decline" onClick={this.submit(false)}>No</button>
           </div>
         </div>
       </div>
@@ -164,7 +246,7 @@ function PersonalDisplay(props) {
         gemClass={props.gemClass}
         status={props.status}
         points={props.points} />
-      <DailyPerformance setPerformance={props.setPerformance} />
+      <DailyPerformance addPoints={props.addPoints} />
     </div>
   );
 }
@@ -174,7 +256,7 @@ PersonalDisplay.propTypes = {
   gemClass: React.PropTypes.string,
   status: React.PropTypes.string,
   points: React.PropTypes.number,
-  setPerformance: React.PropTypes.func.isRequired,
+  addPoints: React.PropTypes.func.isRequired,
 };
 
 // ============================================================================================
@@ -281,6 +363,11 @@ var Application = React.createClass({
     return status;
   },
 
+  addPoints: function(index, perf) {
+    this.state.people[index].points += perf;
+    this.setState(this.state);
+  },
+
   render: function() {
     return (
       <div className="app-container">
@@ -292,7 +379,7 @@ var Application = React.createClass({
             gemClass={this.getGemClass(person.points)}
             status={this.getStatus(person.points)}
             points={person.points}
-            setPerformance={this.addPerformance}
+            addPoints={function(perf) {this.addPoints(index, perf)}.bind(this)}
             key={person.id}
           />
         );

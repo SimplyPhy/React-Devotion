@@ -265,7 +265,7 @@ h3 {
     }
 
     .perf-selection {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         height: 40%;
@@ -274,7 +274,22 @@ h3 {
     }
 
     .perf-selection-active {
+        display: flex;
+        position: relative;
+        opacity: 0;
+        animation-name: fade;
+        animation-duration: 0.75s;
+        animation-timing-function: linear;
+    }
 
+    .perf-selection-inactive {
+        display: flex;
+        position: relative;
+        opacity: 1;
+        animation-name: fade;
+        animation-duration: 0.75s;
+        animation-timing-function: linear;
+        animation-direction: reverse;
     }
 
         .perf-confirmation {
@@ -282,8 +297,11 @@ h3 {
             flex-wrap: wrap;
             height: 50px;
             width: 130px;
-            display: none;
         }
+
+            .display-none {
+                display: none;
+            }
 
             .perf-msg {
                 height: 30px;
@@ -371,5 +389,160 @@ h3 {
 
             }
 
+/* ================================================
+==                 Animations                    ==
+================================================ */
+
+.fade-out {
+    position: relative;
+    animation-name: fade;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+}
+
+.fade-in {
+    position: relative;
+    animation-name: fade;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+}
+
+@keyframes fade {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.select-empty {
+    /* gem-empty doesn't animate on selection */
+}
+
+    .select-empty-confirm {
+        position: relative;
+        animation-name: select-empty-confirm;
+        animation-duration: 0.75s;
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes select-empty-confirm {
+        0%   {right: 0px; opacity: 1;}
+        99%  {right: 50px; opacity: 0;}
+        100% {right: 0px;}
+    }
+
+    .select-empty-decline {
+        /* gem-empty doesn't animate on decline */
+    }
+
+.select-dark {
+    position: relative;
+    animation-name: select-dark;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes select-dark {
+    0%   {right: 0px;}
+    100% {right: 50px;}
+}
+
+    .select-dark-confirm {
+        position: relative;
+        animation-name: select-dark-confirm;
+        animation-duration: 0.75s;
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes select-dark-confirm {
+        0%   {right: 50px; opacity: 1;}
+        99%  {right: 100px; opacity: 0;}
+        100% {right: 0px;}
+    }
+
+    .select-dark-decline {
+        position: relative;
+        animation-name: select-dark-decline;
+        animation-duration: 0.75s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes select-dark-decline {
+        0%   {right: 50px;}
+        100%  {right: 0px;}
+    }
+
+.select-light {
+    position: relative;
+    animation-name: select-light;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes select-light {
+    0%   {right: 0px;}
+    100% {right: 100px;}
+}
+
+    .select-light-confirm {
+        position: relative;
+        animation-name: select-light-confirm;
+        animation-duration: 0.75s;
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes select-light-confirm {
+        0%   {right: 100px; opacity: 1;}
+        99%  {right: 150px; opacity: 0;}
+        100% {right: 0px;}
+    }
+
+    .select-light-decline {
+        position: relative;
+        animation-name: select-light-decline;
+        animation-duration: 0.75s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes select-light-decline {
+        0%   {right: 100px;}
+        100%  {right: 0px;}
+    }
+
+.select-bright {
+    position: relative;
+    animation-name: select-bright;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes select-bright {
+    0%   {right: 0px;}
+    100% {right: 150px;}
+}
+
+    .select-bright-confirm {
+        position: relative;
+        animation-name: select-bright-confirm;
+        animation-duration: 0.75s;
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes select-bright-confirm {
+        0%   {right: 150px; opacity: 1;}
+        99%  {right: 200px; opacity: 0;}
+        100% {right: 0px;}
+    }
+
+    .select-bright-decline {
+        position: relative;
+        animation-name: select-bright-decline;
+        animation-duration: 0.75s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes select-bright-decline {
+        0%   {right: 150px;}
+        100%  {right: 0px;}
+    }
 
 
