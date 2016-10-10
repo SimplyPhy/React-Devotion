@@ -113,95 +113,104 @@ var DailyPerformance = React.createClass({
   getInitialState: function() {
     return {
       gemBools: ['', '', '', ''], // empty, dark, light, bright
-      confirmBool: '',
+      confirmBool: 'perf-confirmation',
       points: 0,
     };
   },
 
   selectPerf: function(perf) {
-    this.state.gemBools.forEach(function(gemBool){gemBool = 'fade-out'});
+    var newClass = ['fade-out','fade-out','fade-out','fade-out'];
+    // removeClass = this.state.gemBools.map(function(gemBool){gemBool = ''});
+    // this.setState({gemBools: removeClass});
 
     if (perf === 0) {
-      this.state.gemBools[0] = 'select-empty';
+      newClass[0] = 'select-empty';
+      this.setState({
+        gemBools: newClass,
+      });
     } else if (perf === 1) {
-      this.state.gemBools[1] = 'select-dark';
-      this.state.points = 1;
+      newClass[1] = 'select-dark';
+      this.setState({
+        gemBools: newClass,
+        points: 1
+      });
     } else if (perf === 2) {
-      this.state.gemBools[2] = 'select-light';
-      this.state.points = 2;
+      newClass[2] = 'select-light';
+      this.setState({
+        gemBools: newClass,
+        points: 2
+      });
     } else if (perf === 3) {
-      this.state.gemBools[3] = 'select-bright';
-      this.state.points = 3;
+      newClass[3] = 'select-bright';
+      this.setState({
+        gemBools: newClass,
+        points: 3
+      });
     }
 
-    this.state.confirmBool = 'perf-selection-active';
-    // this.setState();
+    this.setState({
+      confirmBool: 'perf-confirmation-active',
+    });
+
   },
 
   submit: function(confirm) {
 
     var fadeIn = [0,1,2,3];
+    var newClass = ['','','',''];
 
     if (this.state.points === 0) {
       if (confirm) {
-        setState({gemBools[0]: 'select-empty-confirm'});
-        //this.state.gemBools[0] = 'select-empty-confirm';
+        newClass[0] = 'select-empty-confirm';
+        this.setState({gemBools: newClass});
       } else {
-        setState({gemBools[0]: ''});
-        // this.state.gemBools[0] = '';
         fadeIn = [1,2,3];
       }
     } else if (this.state.points === 1) {
       if (confirm) {
-        setState({gemBools[1]: 'select-dark-confirm'});
-        // this.state.gemBools[1] = 'select-dark-confirm';
+        newClass[1] = 'select-dark-confirm';
+        this.setState({gemBools: newClass});
       } else {
-        setState({gemBools[1]: 'select-dark-decline'});
-        // this.state.gemBools[1] = 'select-dark-decline';
+        newClass[1] = 'select-dark-decline';
+        this.setState({gemBools: newClass});
         fadeIn = [0,2,3];
       }
     } else if (this.state.points === 2) {
       if (confirm) {
-        setState({gemBools[2]: 'select-light-confirm'});
-        // this.state.gemBools[2] = 'select-light-confirm';
+        newClass[2] = 'select-light-confirm';
+        this.setState({gemBools: newClass});
       } else {
-        setState({gemBools[2]: 'select-light-decline'});
-        // this.state.gemBools[2] = 'select-light-decline';
+        newClass[2] = 'select-light-decline';
+        this.setState({gemBools: newClass});
         fadeIn = [0,1,3];
       }
     } else if (this.state.points === 3) {
       if (confirm) {
-        setState({gemBools[3]: 'select-bright-confirm'});
-        // this.state.gemBools[3] = 'select-bright-confirm';
+        newClass[3] = 'select-bright-confirm';
+        this.setState({gemBools: newClass});
       } else {
-        setState({gemBools[3]: 'select-bright-decline'});
-        // this.state.gemBools[3] = 'select-bright-decline';
+        newClass[3] = 'select-bright-decline';
+        this.setState({gemBools: newClass});
         fadeIn = [0,1,2];
       }
     }
 
-    setState({confirmBool: 'perf-selection-inactive'});
-    // this.state.confirmBool = 'perf-selection-inactive';
+    this.setState({confirmBool: 'perf-confirmation-inactive'});
 
-    // setTimeout(function() {
-    //   this.state.confirmBool = 'display-none';
-    //   this.fadeIn.forEach(function(gem){this.state.gemBools[gem] = 'fade-in'});
-    // }, 750);
+    setTimeout(function() {
+      var newFadeIn = fadeIn.map(function(gem){fadeIn[gem] = 'fade-in'});
+      this.setState({
+        confirmBool: 'perf-confirmation',
+        gemBools: newFadeIn,
+      });
+    }.bind(this), 750);
 
-    // this.setState(this.state);
-
-    // if (confirm === true) {
-    //   this.props.addPoints(this.state.points);
-    //   this.state.points = 0;
-    // } else if (confirm === false) {
-    //   this.state.points = 0;
-    // }
-
-    /*** I don't know if this should happen before or after setState ***/
-    // setTimeout(function() {
-    //   this.state.gemBools.forEach(function(gemBool){gemBool = 'fade-in'});
-    //   this.state.confirmBool = 'display-none';
-    // }, 750);
+    if (confirm === true) {
+      this.props.addPoints(this.state.points);
+      this.state.points = 0;
+    } else if (confirm === false) {
+      this.state.points = 0;
+    }
 
   },
 
@@ -220,14 +229,14 @@ var DailyPerformance = React.createClass({
           <h3>Today's Performance</h3>
         </div>
         <div className="perf-selection">
-          <div className={"gem-selection gem-empty " + this.state.gemBools[0]} onClick={this.selectPerf(0)}></div>
-          <div className={"gem-selection gem-dark " + this.state.gemBools[1]} onClick={this.selectPerf(1)}></div>
-          <div className={"gem-selection gem-light " + this.state.gemBools[2]} onClick={this.selectPerf(2)}></div>
-          <div className={"gem-selection gem-bright " + this.state.gemBools[3]} onClick={this.selectPerf(3)}></div>
-          <div className="perf-confirmation">
-            <div className={"perf-msg " + this.state.confirmBool}>Confirm Selection?</div>
-            <button className="perf-accept" onClick={this.submit(true)}>Yes</button>
-            <button className="perf-decline" onClick={this.submit(false)}>No</button>
+          <div className={"gem-selection gem-empty " + this.state.gemBools[0]} onClick={function() {this.selectPerf(0)}.bind(this)}></div>
+          <div className={"gem-selection gem-dark " + this.state.gemBools[1]} onClick={function() {this.selectPerf(1)}.bind(this)}></div>
+          <div className={"gem-selection gem-light " + this.state.gemBools[2]} onClick={function() {this.selectPerf(2)}.bind(this)}></div>
+          <div className={"gem-selection gem-bright " + this.state.gemBools[3]} onClick={function() {this.selectPerf(3)}.bind(this)}></div>
+          <div className={this.state.confirmBool}>
+            <div className="perf-msg">Confirm Selection?</div>
+            <button className="perf-accept" onClick={function(){this.submit(true)}.bind(this)}>Yes</button>
+            <button className="perf-decline" onClick={function(){this.submit(false)}.bind(this)}>No</button>
           </div>
         </div>
       </div>

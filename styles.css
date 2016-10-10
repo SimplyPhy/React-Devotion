@@ -265,38 +265,51 @@ h3 {
     }
 
     .perf-selection {
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
         height: 40%;
         width: 100%;
         margin-bottom: 20px;
     }
 
-    .perf-selection-active {
-        display: flex;
-        position: relative;
-        opacity: 0;
-        animation-name: fade;
-        animation-duration: 0.75s;
-        animation-timing-function: linear;
-    }
-
-    .perf-selection-inactive {
-        display: flex;
-        position: relative;
-        opacity: 1;
-        animation-name: fade;
-        animation-duration: 0.75s;
-        animation-timing-function: linear;
-        animation-direction: reverse;
-    }
-
         .perf-confirmation {
+            display: none;
+            flex-wrap: wrap;
+            height: 50px;
+            width: 130px;
+            position: absolute;
+            left: 175px;
+        }
+
+        .perf-confirmation-active {
             display: flex;
             flex-wrap: wrap;
             height: 50px;
             width: 130px;
+            animation-name: fade;
+            animation-duration: 0.75s;
+            animation-timing-function: linear;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+            position: absolute;
+            left: 175px;
+            z-index: 1;
+        }
+
+        .perf-confirmation-inactive {
+            display: flex;
+            flex-wrap: wrap;
+            height: 50px;
+            width: 130px;
+            animation-name: fade;
+            animation-duration: 0.75s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            position: absolute;
+            left: 175px;
+            z-index: -1;
         }
 
             .display-none {
@@ -398,6 +411,7 @@ h3 {
     animation-name: fade;
     animation-duration: 0.75s;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 .fade-in {
@@ -406,11 +420,12 @@ h3 {
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-direction: reverse;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fade {
-    0%   {opacity: 1;}
-    100% {opacity: 0;}
+    from {opacity: 1;}
+    to   {opacity: 0;}
 }
 
 .select-empty {
@@ -422,6 +437,7 @@ h3 {
         animation-name: select-empty-confirm;
         animation-duration: 0.75s;
         animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-empty-confirm {
@@ -439,11 +455,12 @@ h3 {
     animation-name: select-dark;
     animation-duration: 0.75s;
     animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes select-dark {
     0%   {right: 0px;}
-    100% {right: 50px;}
+    100% {right: 55px;}
 }
 
     .select-dark-confirm {
@@ -451,11 +468,12 @@ h3 {
         animation-name: select-dark-confirm;
         animation-duration: 0.75s;
         animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-dark-confirm {
-        0%   {right: 50px; opacity: 1;}
-        99%  {right: 100px; opacity: 0;}
+        0%   {right: 55px; opacity: 1;}
+        99%  {right: 105px; opacity: 0;}
         100% {right: 0px;}
     }
 
@@ -464,10 +482,11 @@ h3 {
         animation-name: select-dark-decline;
         animation-duration: 0.75s;
         animation-timing-function: linear;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-dark-decline {
-        0%   {right: 50px;}
+        0%   {right: 55px;}
         100%  {right: 0px;}
     }
 
@@ -476,11 +495,12 @@ h3 {
     animation-name: select-light;
     animation-duration: 0.75s;
     animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes select-light {
     0%   {right: 0px;}
-    100% {right: 100px;}
+    100% {right: 110px;}
 }
 
     .select-light-confirm {
@@ -488,11 +508,12 @@ h3 {
         animation-name: select-light-confirm;
         animation-duration: 0.75s;
         animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-light-confirm {
-        0%   {right: 100px; opacity: 1;}
-        99%  {right: 150px; opacity: 0;}
+        0%   {right: 110px; opacity: 1;}
+        99%  {right: 160px; opacity: 0;}
         100% {right: 0px;}
     }
 
@@ -501,10 +522,11 @@ h3 {
         animation-name: select-light-decline;
         animation-duration: 0.75s;
         animation-timing-function: linear;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-light-decline {
-        0%   {right: 100px;}
+        0%   {right: 110px;}
         100%  {right: 0px;}
     }
 
@@ -513,11 +535,12 @@ h3 {
     animation-name: select-bright;
     animation-duration: 0.75s;
     animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes select-bright {
     0%   {right: 0px;}
-    100% {right: 150px;}
+    100% {right: 165px;}
 }
 
     .select-bright-confirm {
@@ -525,11 +548,12 @@ h3 {
         animation-name: select-bright-confirm;
         animation-duration: 0.75s;
         animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-bright-confirm {
-        0%   {right: 150px; opacity: 1;}
-        99%  {right: 200px; opacity: 0;}
+        0%   {right: 165px; opacity: 1;}
+        99%  {right: 215px; opacity: 0;}
         100% {right: 0px;}
     }
 
@@ -538,10 +562,11 @@ h3 {
         animation-name: select-bright-decline;
         animation-duration: 0.75s;
         animation-timing-function: linear;
+        animation-fill-mode: forwards;
     }
 
     @keyframes select-bright-decline {
-        0%   {right: 150px;}
+        0%   {right: 165px;}
         100%  {right: 0px;}
     }
 
