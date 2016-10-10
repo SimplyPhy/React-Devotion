@@ -62,8 +62,8 @@ var AddPersonForm = React.createClass({
 
   render: function() {
     return (
-      <div className="person-form">
-        <form onSubmit={this.onSubmit}>
+      <div className="new-person-container">
+        <form className="new-person-form"onSubmit={this.onSubmit}>
           <input className="input-name" type="text" value={this.state.name} onChange={this.onNameChange} />
           <input className="input-points" type="number" value={this.state.points} onChange={this.onPointsChange} />
           <input className="input-button" type="submit" value="Add Person" />
@@ -284,29 +284,29 @@ var Application = React.createClass({
     var gemClass = "status-gem ";
 
     if (points < 100 ) {
-      return gemClass += "lightless";
+      return gemClass += "status-gem-lightless";
     } else if (points >= 100 && points < 300){
       devotionStatus = "Crimson";
       return gemClass += "status-gem-crimson";
-    } else if (points >= 301 && points < 700){
+    } else if (points >= 300 && points < 700){
       devotionStatus = "Ember";
       return gemClass += "status-gem-ember";
-    } else if (points >= 701 && points < 1500){
+    } else if (points >= 700 && points < 1500){
       devotionStatus = "Sol";
       return gemClass += "status-gem-sol";
-    } else if (points >= 1501 && points < 3100){
+    } else if (points >= 1500 && points < 3100){
       devotionStatus = "Jade";
       return gemClass += "status-gem-jade";
-    } else if (points >= 3101 && points < 6300){
+    } else if (points >= 3100 && points < 6300){
       devotionStatus = "Cerulean";
       return gemClass += "status-gem-cerulean";
-    } else if (points >= 6301 && points < 12700){
+    } else if (points >= 6300 && points < 12700){
       devotionStatus = "Violet";
       return gemClass += "status-gem-violet";
-    } else if (points >= 12701 && points < 25500){
+    } else if (points >= 12700 && points < 25500){
       devotionStatus = "Prismatic";
       return gemClass += "status-gem-prismatic";
-    } else if (points >= 25501 && points < 51100){
+    } else if (points >= 25500 && points < 51100){
       devotionStatus = "Ethereal";
       return gemClass += "status-gem-ethereal";
     } else if (points >= 51100){

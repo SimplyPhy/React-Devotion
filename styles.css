@@ -8,109 +8,119 @@
     width: 25px;
 }
 
-    .gem-crimson {
+    .gem-lightless {
         background: url(./img/gemstones.png) 0 0;
-        background-size: 1700% 100%;
+        background-size: 1800% 100%;
+    }
+
+        .status-gem-lightless {
+            background: url(./img/gemstones.png) 0 0;
+            background-size: 1800% 100%;
+        }
+
+    .gem-crimson {
+        background: url(./img/gemstones.png) -25px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-crimson {
-            background: url(./img/gemstones.png) 0 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -50px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-ember {
-        background: url(./img/gemstones.png) -25px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -50px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-ember {
-            background: url(./img/gemstones.png) -50px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -100px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-sol {
-        background: url(./img/gemstones.png) -50px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -75px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-sol {
-            background: url(./img/gemstones.png) -100px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -150px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-jade {
-        background: url(./img/gemstones.png) -75px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -100px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-jade {
-            background: url(./img/gemstones.png) -150px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -200px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-cerulean {
-        background: url(./img/gemstones.png) -100px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -125px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-cerulean {
-            background: url(./img/gemstones.png) -200px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -250px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-violet {
-        background: url(./img/gemstones.png) -125px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -150px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-violet {
-            background: url(./img/gemstones.png) -250px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -300px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-prismatic {
-        background: url(./img/gemstones.png) -150px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -175px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-prismatic {
-            background: url(./img/gemstones.png) -300px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -350px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-ethereal {
-        background: url(./img/gemstones.png) -175px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -200px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-ethereal {
-            background: url(./img/gemstones.png) -350px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -400px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-eternal {
-        background: url(./img/gemstones.png) -200px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -225px 0;
+        background-size: 1800% 100%;
     }
 
         .status-gem-eternal {
-            background: url(./img/gemstones.png) -400px 0;
-            background-size: 1700% 100%;
+            background: url(./img/gemstones.png) -450px 0;
+            background-size: 1800% 100%;
         }
 
     .gem-dark {
-        background: url(./img/gemstones.png) -250px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -275px 0;
+        background-size: 1800% 100%;
     }
 
     .gem-light {
-        background: url(./img/gemstones.png) -275px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -300px 0;
+        background-size: 1800% 100%;
     }
 
     .gem-bright {
-        background: url(./img/gemstones.png) -300px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -325px 0;
+        background-size: 1800% 100%;
     }
 
 /*                  Selection Gems
@@ -122,43 +132,43 @@
 }
 
 .gem-selection.gem-empty {
-    background: url(./img/gemstones.png) -650px 0;
-    background-size: 1700% 100%;
+    background: url(./img/gemstones.png) -700px 0;
+    background-size: 1800% 100%;
 }
 
     .gem-selection.gem-empty:hover {
-        background: url(./img/gemstones.png) -450px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -500px 0;
+        background-size: 1800% 100%;
     }
 
 .gem-selection.gem-dark {
-    background: url(./img/gemstones.png) -700px 0;
-    background-size: 1700% 100%;
+    background: url(./img/gemstones.png) -750px 0;
+    background-size: 1800% 100%;
 }
 
     .gem-selection.gem-dark:hover {
-        background: url(./img/gemstones.png) -500px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -550px 0;
+        background-size: 1800% 100%;
     }
 
 .gem-selection.gem-light {
-    background: url(./img/gemstones.png) -750px 0;
-    background-size: 1700% 100%;
+    background: url(./img/gemstones.png) -8000px 0;
+    background-size: 1800% 100%;
 }
 
     .gem-selection.gem-light:hover {
-        background: url(./img/gemstones.png) -550px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -600px 0;
+        background-size: 1800% 100%;
     }
 
 .gem-selection.gem-bright {
-    background: url(./img/gemstones.png) -800px 0;
-    background-size: 1700% 100%;
+    background: url(./img/gemstones.png) -850px 0;
+    background-size: 1800% 100%;
 }
 
     .gem-selection.gem-bright:hover {
-        background: url(./img/gemstones.png) -600px 0;
-        background-size: 1700% 100%;
+        background: url(./img/gemstones.png) -650px 0;
+        background-size: 1800% 100%;
     }
 
 /* ================================================
@@ -372,7 +382,7 @@ h3 {
             .status-gem {
                 height: 50px;
                 width: 50px;
-                background-size: 1700% 100%;
+                background-size: 1800% 100%;
             }
 
         .status-devotion-container {
@@ -405,7 +415,46 @@ h3 {
 ==                New Person Form                ==
 ================================================ */
 
+.new-person-container {
+    display: flex;
+    justify-content: center;
+    width: 760px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px 20px;
 
+}
+
+    .new-person-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        height: 30px;
+    }
+
+        .input-name {
+            width: 50%;
+            height: 100%;
+            font-size: 1.2rem;
+            padding-left: 8px;
+            margin-right: 20px;
+        }
+
+        .input-points {
+            width: 20%;
+            height: 100%;
+            font-size: 1.2rem;
+            padding-left: 8px;
+            margin-right: 10px;
+        }
+
+        .input-button {
+            width: 15%;
+            height: 36px;
+            -webkit-appearance: none;
+            font-size: 1rem;
+        }
 
 /* ================================================
 ==                 Animations                    ==
