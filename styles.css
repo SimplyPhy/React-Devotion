@@ -288,10 +288,9 @@ h3 {
             flex-wrap: wrap;
             height: 50px;
             width: 130px;
-            animation-name: fade;
+            animation-name: fade-in;
             animation-duration: 0.75s;
             animation-timing-function: linear;
-            animation-direction: reverse;
             animation-fill-mode: forwards;
             position: absolute;
             left: 175px;
@@ -303,7 +302,7 @@ h3 {
             flex-wrap: wrap;
             height: 50px;
             width: 130px;
-            animation-name: fade;
+            animation-name: fade-out;
             animation-duration: 0.75s;
             animation-timing-function: linear;
             animation-fill-mode: forwards;
@@ -403,12 +402,21 @@ h3 {
             }
 
 /* ================================================
+==                New Person Form                ==
+================================================ */
+
+
+
+/* ================================================
 ==                 Animations                    ==
 ================================================ */
+.hide {
+    opacity: 0;
+}
 
 .fade-out {
     position: relative;
-    animation-name: fade;
+    animation-name: fade-out;
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
@@ -416,14 +424,18 @@ h3 {
 
 .fade-in {
     position: relative;
-    animation-name: fade;
+    animation-name: fade-in;
     animation-duration: 0.75s;
     animation-timing-function: linear;
-    animation-direction: reverse;
     animation-fill-mode: forwards;
 }
 
-@keyframes fade {
+@keyframes fade-in {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+@keyframes fade-out {
     from {opacity: 1;}
     to   {opacity: 0;}
 }
@@ -443,7 +455,7 @@ h3 {
     @keyframes select-empty-confirm {
         0%   {right: 0px; opacity: 1;}
         99%  {right: 50px; opacity: 0;}
-        100% {right: 0px;}
+        100% {right: 0px; opacity: 0;}
     }
 
     .select-empty-decline {
@@ -474,7 +486,7 @@ h3 {
     @keyframes select-dark-confirm {
         0%   {right: 55px; opacity: 1;}
         99%  {right: 105px; opacity: 0;}
-        100% {right: 0px;}
+        100% {right: 0px; opacity: 0;}
     }
 
     .select-dark-decline {
@@ -514,7 +526,7 @@ h3 {
     @keyframes select-light-confirm {
         0%   {right: 110px; opacity: 1;}
         99%  {right: 160px; opacity: 0;}
-        100% {right: 0px;}
+        100% {right: 0px; opacity: 0;}
     }
 
     .select-light-decline {
@@ -554,7 +566,7 @@ h3 {
     @keyframes select-bright-confirm {
         0%   {right: 165px; opacity: 1;}
         99%  {right: 215px; opacity: 0;}
-        100% {right: 0px;}
+        100% {right: 0px; opacity: 0;}
     }
 
     .select-bright-decline {

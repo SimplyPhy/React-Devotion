@@ -119,9 +119,7 @@ var DailyPerformance = React.createClass({
   },
 
   selectPerf: function(perf) {
-    var newClass = ['fade-out','fade-out','fade-out','fade-out'];
-    // removeClass = this.state.gemBools.map(function(gemBool){gemBool = ''});
-    // this.setState({gemBools: removeClass});
+    var newClass = ['hide','hide','hide','hide'];
 
     if (perf === 0) {
       newClass[0] = 'select-empty';
@@ -157,7 +155,7 @@ var DailyPerformance = React.createClass({
   submit: function(confirm) {
 
     var fadeIn = [0,1,2,3];
-    var newClass = ['','','',''];
+    var newClass = ['hide','hide','hide','hide'];
 
     if (this.state.points === 0) {
       if (confirm) {
@@ -197,29 +195,18 @@ var DailyPerformance = React.createClass({
 
     this.setState({confirmBool: 'perf-confirmation-inactive'});
 
-    setTimeout(function() {
-      var newFadeIn = fadeIn.map(function(gem){fadeIn[gem] = 'fade-in'});
+    window.setTimeout(function() {
       this.setState({
         confirmBool: 'perf-confirmation',
-        gemBools: newFadeIn,
+        gemBools: ['fade-in','fade-in','fade-in','fade-in'],
       });
     }.bind(this), 750);
 
     if (confirm === true) {
       this.props.addPoints(this.state.points);
-      this.state.points = 0;
-    } else if (confirm === false) {
-      this.state.points = 0;
     }
 
-  },
-
-  addPoints: function(points) {
-
-  },
-
-  decline: function(points) {
-
+    this.state.points = 0;
   },
 
   render: function() {
