@@ -63,7 +63,7 @@ var AddPersonForm = React.createClass({
   render: function() {
     return (
       <div className="new-person-container">
-        <form className="new-person-form"onSubmit={this.onSubmit}>
+        <form className="new-person-form" onSubmit={this.onSubmit}>
           <input className="input-name" type="text" value={this.state.name} onChange={this.onNameChange} />
           <input className="input-points" type="number" value={this.state.points} onChange={this.onPointsChange} />
           <input className="input-button" type="submit" value="Add Person" />
@@ -122,24 +122,24 @@ var DailyPerformance = React.createClass({
     var newClass = ['hide','hide','hide','hide'];
 
     if (perf === 0) {
-      newClass[0] = 'select-empty';
+      newClass[0] = 'select-empty gem-selected';
       this.setState({
         gemBools: newClass,
       });
     } else if (perf === 1) {
-      newClass[1] = 'select-dark';
+      newClass[1] = 'select-dark gem-selected';
       this.setState({
         gemBools: newClass,
         points: 1
       });
     } else if (perf === 2) {
-      newClass[2] = 'select-light';
+      newClass[2] = 'select-light gem-selected';
       this.setState({
         gemBools: newClass,
         points: 2
       });
     } else if (perf === 3) {
-      newClass[3] = 'select-bright';
+      newClass[3] = 'select-bright gem-selected';
       this.setState({
         gemBools: newClass,
         points: 3
@@ -159,35 +159,35 @@ var DailyPerformance = React.createClass({
 
     if (this.state.points === 0) {
       if (confirm) {
-        newClass[0] = 'select-empty-confirm';
+        newClass[0] = 'select-empty-confirm gem-selected';
         this.setState({gemBools: newClass});
       } else {
         fadeIn = [1,2,3];
       }
     } else if (this.state.points === 1) {
       if (confirm) {
-        newClass[1] = 'select-dark-confirm';
+        newClass[1] = 'select-dark-confirm gem-selected';
         this.setState({gemBools: newClass});
       } else {
-        newClass[1] = 'select-dark-decline';
+        newClass[1] = 'select-dark-decline gem-selected';
         this.setState({gemBools: newClass});
         fadeIn = [0,2,3];
       }
     } else if (this.state.points === 2) {
       if (confirm) {
-        newClass[2] = 'select-light-confirm';
+        newClass[2] = 'select-light-confirm gem-selected';
         this.setState({gemBools: newClass});
       } else {
-        newClass[2] = 'select-light-decline';
+        newClass[2] = 'select-light-decline gem-selected';
         this.setState({gemBools: newClass});
         fadeIn = [0,1,3];
       }
     } else if (this.state.points === 3) {
       if (confirm) {
-        newClass[3] = 'select-bright-confirm';
+        newClass[3] = 'select-bright-confirm gem-selected';
         this.setState({gemBools: newClass});
       } else {
-        newClass[3] = 'select-bright-decline';
+        newClass[3] = 'select-bright-decline gem-selected';
         this.setState({gemBools: newClass});
         fadeIn = [0,1,2];
       }
@@ -216,10 +216,10 @@ var DailyPerformance = React.createClass({
           <h3>Today's Performance</h3>
         </div>
         <div className="perf-selection">
-          <div className={"gem-selection gem-empty " + this.state.gemBools[0]} onClick={function() {this.selectPerf(0)}.bind(this)}></div>
-          <div className={"gem-selection gem-dark " + this.state.gemBools[1]} onClick={function() {this.selectPerf(1)}.bind(this)}></div>
-          <div className={"gem-selection gem-light " + this.state.gemBools[2]} onClick={function() {this.selectPerf(2)}.bind(this)}></div>
-          <div className={"gem-selection gem-bright " + this.state.gemBools[3]} onClick={function() {this.selectPerf(3)}.bind(this)}></div>
+          <div className={"gem-empty gem-selection " + this.state.gemBools[0]} onClick={function() {this.selectPerf(0)}.bind(this)}></div>
+          <div className={"gem-dark gem-selection " + this.state.gemBools[1]} onClick={function() {this.selectPerf(1)}.bind(this)}></div>
+          <div className={"gem-light gem-selection " + this.state.gemBools[2]} onClick={function() {this.selectPerf(2)}.bind(this)}></div>
+          <div className={"gem-bright gem-selection " + this.state.gemBools[3]} onClick={function() {this.selectPerf(3)}.bind(this)}></div>
           <div className={this.state.confirmBool}>
             <div className="perf-msg">Confirm Selection?</div>
             <button className="perf-accept" onClick={function(){this.submit(true)}.bind(this)}>Yes</button>

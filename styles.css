@@ -141,12 +141,22 @@
         background-size: 1800% 100%;
     }
 
+    .gem-selected.gem-empty {
+        background: url(./img/gemstones.png) -500px 0;
+        background-size: 1800% 100%;
+    }
+
 .gem-selection.gem-dark {
     background: url(./img/gemstones.png) -750px 0;
     background-size: 1800% 100%;
 }
 
     .gem-selection.gem-dark:hover {
+        background: url(./img/gemstones.png) -550px 0;
+        background-size: 1800% 100%;
+    }
+
+    .gem-selected.gem-dark {
         background: url(./img/gemstones.png) -550px 0;
         background-size: 1800% 100%;
     }
@@ -161,12 +171,22 @@
         background-size: 1800% 100%;
     }
 
+    .gem-selected.gem-light {
+        background: url(./img/gemstones.png) -600px 0;
+        background-size: 1800% 100%;
+    }
+
 .gem-selection.gem-bright {
     background: url(./img/gemstones.png) -850px 0;
     background-size: 1800% 100%;
 }
 
     .gem-selection.gem-bright:hover {
+        background: url(./img/gemstones.png) -650px 0;
+        background-size: 1800% 100%;
+    }
+
+    .gem-selected.gem-bright {
         background: url(./img/gemstones.png) -650px 0;
         background-size: 1800% 100%;
     }
