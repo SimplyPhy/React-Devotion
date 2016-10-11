@@ -1,3 +1,7 @@
+/* fonts
+============================= */
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
 
 /* ================================================
 ==                Gem Spritesheet                ==
@@ -290,8 +294,7 @@ h3 {
     }
 
     .tier-div > div {
-        padding: 2px 4px;
-        margin: 0 4px;
+        margin: 6px 10px;
     }
 
 /* ================================================
@@ -491,7 +494,7 @@ h3 {
     }
 
         .input-name {
-            width: 50%;
+            width: 60%;
             height: 100%;
             font-size: 1.2rem;
             padding-left: 8px;
@@ -710,6 +713,8 @@ h3 {
 body {
     background: hsl(180, 100%, 80%);
     background: linear-gradient(hsl(180, 100%, 80%), hsl(180, 100%, 90%));
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
     margin: 0;
 }
 
@@ -717,5 +722,107 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+
+
+/* colors experimenting */
+
+body {
+    background: linear-gradient(#3055A9, #6F8DD1);
+}
+
+h1 {
+    color: #FFC655;
+    font-size: 2rem;
+    font-style: bold;
+}
+
+h2 {
+    color: #361895;
+    font-size: 1.6rem;
+    font-style: bold;
+}
+
+h3 {
+    color: #92E1E1;
+    font-size: 1.3rem;
+    font-style: bold;
+}
+
+.header {
+    background: ;
+}
+
+.possible-header-forms-container {
+    /* needs to be created */
+    background: ;
+}
+
+.header-status-gems {
+    background: #5EC7C7;
+}
+
+.conversion-gems-div {
+    background: #5EC7C7;
+}
+
+.tier-div {
+    background: #5EC7C7;
+    /*font-size: 1rem;*/
+}
+
+.app-container {
+    background: #694EBF;
+}
+
+.new-person-container {
+    background: #5033AE;
+}
+
+.input-name {
+    background: #B1A0E8;
+    color: #361895;
+}
+
+.input-points {
+    background: #B1A0E8;
+    color: #361895;
+}
+
+    ::-webkit-input-placeholder { /* Chrome */
+      color: #8971D4;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #8971D4;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #8971D4;
+    }
+
+/*.input-button {
+    background: ;
+}*/
+
+    .input-button:enabled {
+        background: #361895;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .input-button:disabled {
+        background: #5033AE;
+        color: hsl(0, 0%, 70%);
+    }
+
+.personal-dispay {
+    background: #8971D4;
+}
+
+    .personal-display h3 {
+        color: #078282;
+    }
+
+
+
+
+
 
 
