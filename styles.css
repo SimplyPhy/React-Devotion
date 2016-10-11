@@ -197,10 +197,13 @@
 
 .header {
     text-align: center;
+    /*background: hsl(180, 100%, 80%);*/
 }
 
 h1 {
     border-bottom: 2px dotted black;
+    margin: 0;
+    padding: .67rem 0;
 }
 
 h3 {
@@ -269,7 +272,7 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 5px;
+    padding: 5px 5px 20px 5px;
 }
 
     .tier-container > h3 {
@@ -299,6 +302,12 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 1000px;
+    border: 2px solid black;
+    background: hsl(120, 30%, 50%);
+    border-radius: 20px;
 }
 
 .personal-display {
@@ -308,6 +317,7 @@ h3 {
     border: 2px solid black;
     margin: 5px 0;
     background: hsl(140, 100%, 90%);
+    border-radius: 10px;
 }
 
     .personal-display:last-of-type {
@@ -457,14 +467,6 @@ h3 {
                 margin: 3px;
             }
 
-            .devotion-tier {
-
-            }
-
-            .devotion-points {
-
-            }
-
 /* ================================================
 ==                New Person Form                ==
 ================================================ */
@@ -474,9 +476,10 @@ h3 {
     justify-content: center;
     width: 760px;
     border: 2px solid black;
-    margin: 5px;
+    margin: 20px 5px 5px 5px;
     padding: 10px 20px;
     background: hsl(140, 70%, 70%);
+    border-radius: 5px;
 }
 
     .new-person-form {
@@ -705,7 +708,9 @@ h3 {
 ================================================ */
 
 body {
-    background: hsl(180, 100%, 90%);
+    background: hsl(180, 100%, 80%);
+    background: linear-gradient(hsl(180, 100%, 80%), hsl(180, 100%, 90%));
+    margin: 0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
