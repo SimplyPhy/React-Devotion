@@ -22,7 +22,7 @@ var PEOPLE = [
   },
   {
     name: "Eric Phy",
-    points: 7560,
+    points: 12025,
     id: 3,
   },
 ];
@@ -42,11 +42,17 @@ var AddPersonForm = React.createClass({
     return {
       name: "",
       points: "",
+      buttonBool: true,
     };
   },
 
   onNameChange: function(e) {
     this.setState({name: e.target.value});
+    if (e.target.value.trim() != "") {
+      this.setState({buttonBool: false});
+    } else {
+      this.setState({buttonBool: true});
+    }
   },
 
   onPointsChange: function(e) {
@@ -64,9 +70,9 @@ var AddPersonForm = React.createClass({
     return (
       <div className="new-person-container">
         <form className="new-person-form" onSubmit={this.onSubmit}>
-          <input className="input-name" type="text" value={this.state.name} onChange={this.onNameChange} />
-          <input className="input-points" type="number" value={this.state.points} onChange={this.onPointsChange} />
-          <input className="input-button" type="submit" value="Add Person" />
+          <input className="input-name" type="text" value={this.state.name} onChange={this.onNameChange} placeholder="Name"/>
+          <input className="input-points" type="number" value={this.state.points} onChange={this.onPointsChange} placeholder="Initial Points"/>
+          <input className="input-button" type="submit" value="Add Person" disabled={this.state.buttonBool} />
         </form>
       </div>
     );

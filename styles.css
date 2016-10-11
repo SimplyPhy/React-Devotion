@@ -141,7 +141,7 @@
         background-size: 1800% 100%;
     }
 
-    .gem-selected.gem-empty {
+    .gem-selection.gem-selected.gem-empty {
         background: url(./img/gemstones.png) -500px 0;
         background-size: 1800% 100%;
     }
@@ -156,7 +156,7 @@
         background-size: 1800% 100%;
     }
 
-    .gem-selected.gem-dark {
+    .gem-selection.gem-selected.gem-dark {
         background: url(./img/gemstones.png) -550px 0;
         background-size: 1800% 100%;
     }
@@ -171,7 +171,7 @@
         background-size: 1800% 100%;
     }
 
-    .gem-selected.gem-light {
+    .gem-selection.gem-selected.gem-light {
         background: url(./img/gemstones.png) -600px 0;
         background-size: 1800% 100%;
     }
@@ -186,7 +186,7 @@
         background-size: 1800% 100%;
     }
 
-    .gem-selected.gem-bright {
+    .gem-selection.gem-selected.gem-bright {
         background: url(./img/gemstones.png) -650px 0;
         background-size: 1800% 100%;
     }
@@ -214,11 +214,11 @@ h3 {
 }
 
     .header-status-gems {
-        background: hsl(0, 80%, 85%);
         width: 480px;
         display: inline-flex;
         flex-wrap: wrap;
         border: 1px solid black;
+        background: hsl(0, 80%, 90%);
     }
 
         .gem-div {
@@ -248,6 +248,7 @@ h3 {
 
     .conversion-gems-div {
         border: 1px solid black;
+        background: hsl(0, 80%, 90%);
     }
 
 .loading-div {
@@ -260,6 +261,34 @@ h3 {
         position: relative;
         top: 50%;
         font-size: 1.5rem;
+    }
+
+.tier-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+    .tier-container > h3 {
+        width: 100%;
+    }
+
+    .tier-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 2px solid black;
+        width: 655px;
+        padding: 2px 5px;
+        background: hsl(0, 80%, 90%);
+    }
+
+    .tier-div > div {
+        padding: 2px 4px;
+        margin: 0 4px;
     }
 
 /* ================================================
@@ -278,7 +307,12 @@ h3 {
     width: 800px;
     border: 2px solid black;
     margin: 5px 0;
+    background: hsl(140, 100%, 90%);
 }
+
+    .personal-display:last-of-type {
+        margin-bottom: 30px;
+    }
 
 /* ======================================== */
 .perf-container {
@@ -442,7 +476,7 @@ h3 {
     border: 2px solid black;
     margin: 5px;
     padding: 10px 20px;
-
+    background: hsl(140, 70%, 70%);
 }
 
     .new-person-form {
@@ -459,6 +493,8 @@ h3 {
             font-size: 1.2rem;
             padding-left: 8px;
             margin-right: 20px;
+            background: hsl(140, 70%, 90%);
+            /*-webkit-appearance: none;*/
         }
 
         .input-points {
@@ -467,18 +503,31 @@ h3 {
             font-size: 1.2rem;
             padding-left: 8px;
             margin-right: 10px;
+            background: hsl(140, 70%, 90%);
+            /*-webkit-appearance: none;*/
         }
 
         .input-button {
             width: 15%;
             height: 36px;
-            -webkit-appearance: none;
             font-size: 1rem;
+            -webkit-appearance: none;
         }
+
+            .input-button:enabled {
+                background: hsl(140, 50%, 45%);
+                color: hsl(0, 0%, 100%);
+            }
+
+            .input-button:disabled {
+                background: hsl(140, 50%, 60%);
+                color: hsl(0, 0%, 90%);
+            }
 
 /* ================================================
 ==                 Animations                    ==
 ================================================ */
+
 .hide {
     opacity: 0;
 }
@@ -650,5 +699,18 @@ h3 {
         0%   {right: 165px;}
         100%  {right: 0px;}
     }
+
+/* ================================================
+==                    Page Styles                ==
+================================================ */
+
+body {
+    background: hsl(180, 100%, 90%);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 
 
