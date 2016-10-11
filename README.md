@@ -40,11 +40,11 @@ The gamified motivational system described above doesn't entirely accurately des
 Likewise, this app doesn't currently attempt to describe many key elements of that system.
 I'd like to build something more comprehensive and dynamic in the future, but in the meantime, feel free to message with with inquiries about it.
 
-#### Techniques Used:
+#### Primary Components:
 React, JSX, CSS3 animations, flexbox, spritesheets
 
 #### Software Used:
-Photoshop, Affinity Photo, Sublime Text 3, Git, ImageOptim
+Photoshop, Affinity Photo, Sublime Text 3, Git, ImageOptim, Paletton
 
 #### Regrets:
 Not using Sass :sweat:
