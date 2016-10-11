@@ -1,13 +1,3 @@
-//  Primary Functionality:
-//    Ability to add new people, including starting points and status (default 0)
-//    Ability to select a daily performance marker, with confirmation message
-//      Hovering over and selecting a performance marker cause it to gain full opacity (diff img)
-//      Gemstone slides left when clicked, other gemstones disappear, and confirm msg appears to right
-//      Confirming selection
-
-// PersonalStatus and DailyPerformance are components inside PersonalDisplays,
-// PersonalDisplays are contained within and take up most of Application,
-// Application displays PersonalDisplays and [yet unmade] NewPersonInput
 
 var PEOPLE = [
   {
