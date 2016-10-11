@@ -22,7 +22,7 @@ var PEOPLE = [
   },
   {
     name: "Eric Phy",
-    points: 12025,
+    points: 17025,
     id: 3,
   },
 ];
