@@ -119,7 +119,7 @@ var DailyPerformance = React.createClass({
   getInitialState: function() {
     return {
       gemBools: ['', '', '', ''], // empty, dark, light, bright
-      confirmBool: 'perf-confirmation',
+      confirmBool: 'remove',
       points: 0,
     };
   },
@@ -153,14 +153,13 @@ var DailyPerformance = React.createClass({
     }
 
     this.setState({
-      confirmBool: 'perf-confirmation-active',
+      confirmBool: 'fade-in',
     });
 
   },
 
   submit: function(confirm) {
 
-    var fadeIn = [0,1,2,3];
     var newClass = ['hide','hide','hide','hide'];
 
     if (this.state.points === 0) {
@@ -168,7 +167,8 @@ var DailyPerformance = React.createClass({
         newClass[0] = 'select-empty-confirm gem-selected';
         this.setState({gemBools: newClass});
       } else {
-        fadeIn = [1,2,3];
+        newClass[0] = 'select-empty-decline gem-selected';
+        this.setState({gemBools: newClass});
       }
     } else if (this.state.points === 1) {
       if (confirm) {
@@ -177,7 +177,6 @@ var DailyPerformance = React.createClass({
       } else {
         newClass[1] = 'select-dark-decline gem-selected';
         this.setState({gemBools: newClass});
-        fadeIn = [0,2,3];
       }
     } else if (this.state.points === 2) {
       if (confirm) {
@@ -186,7 +185,6 @@ var DailyPerformance = React.createClass({
       } else {
         newClass[2] = 'select-light-decline gem-selected';
         this.setState({gemBools: newClass});
-        fadeIn = [0,1,3];
       }
     } else if (this.state.points === 3) {
       if (confirm) {
@@ -195,15 +193,14 @@ var DailyPerformance = React.createClass({
       } else {
         newClass[3] = 'select-bright-decline gem-selected';
         this.setState({gemBools: newClass});
-        fadeIn = [0,1,2];
       }
     }
 
-    this.setState({confirmBool: 'perf-confirmation-inactive'});
+    this.setState({confirmBool: 'fade-out'});
 
     window.setTimeout(function() {
       this.setState({
-        confirmBool: 'perf-confirmation',
+        confirmBool: 'remove',
         gemBools: ['fade-in','fade-in','fade-in','fade-in'],
       });
     }.bind(this), 750);
@@ -226,7 +223,7 @@ var DailyPerformance = React.createClass({
           <div className={"gem-dark gem-selection " + this.state.gemBools[1]} onClick={function() {this.selectPerf(1)}.bind(this)}></div>
           <div className={"gem-light gem-selection " + this.state.gemBools[2]} onClick={function() {this.selectPerf(2)}.bind(this)}></div>
           <div className={"gem-bright gem-selection " + this.state.gemBools[3]} onClick={function() {this.selectPerf(3)}.bind(this)}></div>
-          <div className={this.state.confirmBool}>
+          <div className={"perf-confirmation " + this.state.confirmBool}>
             <div className="perf-msg">Confirm Selection?</div>
             <button className="perf-accept" onClick={function(){this.submit(true)}.bind(this)}>Yes</button>
             <button className="perf-decline" onClick={function(){this.submit(false)}.bind(this)}>No</button>
