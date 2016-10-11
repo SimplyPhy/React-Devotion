@@ -121,6 +121,7 @@ var DailyPerformance = React.createClass({
       gemBools: ['', '', '', ''], // empty, dark, light, bright
       confirmBool: 'remove',
       points: 0,
+      booster: 'unhappy-face',
     };
   },
 
@@ -165,7 +166,7 @@ var DailyPerformance = React.createClass({
     if (this.state.points === 0) {
       if (confirm) {
         newClass[0] = 'select-empty-confirm gem-selected';
-        this.setState({gemBools: newClass});
+        this.setState({gemBools: newClass, booster: 'plus-zero'});
       } else {
         newClass[0] = 'select-empty-decline gem-selected';
         this.setState({gemBools: newClass});
@@ -173,7 +174,7 @@ var DailyPerformance = React.createClass({
     } else if (this.state.points === 1) {
       if (confirm) {
         newClass[1] = 'select-dark-confirm gem-selected';
-        this.setState({gemBools: newClass});
+        this.setState({gemBools: newClass, booster: 'plus-one'});
       } else {
         newClass[1] = 'select-dark-decline gem-selected';
         this.setState({gemBools: newClass});
@@ -181,7 +182,7 @@ var DailyPerformance = React.createClass({
     } else if (this.state.points === 2) {
       if (confirm) {
         newClass[2] = 'select-light-confirm gem-selected';
-        this.setState({gemBools: newClass});
+        this.setState({gemBools: newClass, booster: 'plus-two'});
       } else {
         newClass[2] = 'select-light-decline gem-selected';
         this.setState({gemBools: newClass});
@@ -189,7 +190,7 @@ var DailyPerformance = React.createClass({
     } else if (this.state.points === 3) {
       if (confirm) {
         newClass[3] = 'select-bright-confirm gem-selected';
-        this.setState({gemBools: newClass});
+        this.setState({gemBools: newClass, booster: 'plus-three'});
       } else {
         newClass[3] = 'select-bright-decline gem-selected';
         this.setState({gemBools: newClass});
@@ -204,6 +205,12 @@ var DailyPerformance = React.createClass({
         gemBools: ['fade-in','fade-in','fade-in','fade-in'],
       });
     }.bind(this), 750);
+
+    window.setTimeout(function() {
+      this.setState({
+        booster: 'unhappy-face',
+      });
+    }.bind(this), 1500);
 
     if (confirm === true) {
       this.props.addPoints(this.state.points);
@@ -229,6 +236,7 @@ var DailyPerformance = React.createClass({
             <button className="perf-decline" onClick={function(){this.submit(false)}.bind(this)}>No</button>
           </div>
         </div>
+        <img className={"point-booster "+ this.state.booster} src={"./img/"+ this.state.booster +".png"} />
       </div>
     );
   }
@@ -362,8 +370,8 @@ var Application = React.createClass({
     return status;
   },
 
-  addPoints: function(index, perf) {
-    this.state.people[index].points += perf;
+  addPoints: function(index, newPoints) {
+    this.state.people[index].points += newPoints;
     this.setState(this.state);
   },
 
@@ -378,7 +386,7 @@ var Application = React.createClass({
             gemClass={this.getGemClass(person.points)}
             status={this.getStatus(person.points)}
             points={person.points}
-            addPoints={function(perf) {this.addPoints(index, perf)}.bind(this)}
+            addPoints={function(newPoints) {this.addPoints(index, newPoints)}.bind(this)}
             key={person.id}
           />
         );

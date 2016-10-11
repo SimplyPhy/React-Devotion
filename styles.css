@@ -338,6 +338,7 @@ h3 {
 
 /* ======================================== */
 .perf-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -707,6 +708,58 @@ h3 {
         0%   {right: 165px; opacity: 0;}
         100%  {right: 0px; opacity: 0;}
     }
+
+/*            Points Boosters
+================================= */
+
+.point-booster {
+    position: absolute;
+    height: 26.5px;
+    width: 26.5px;
+    left: -85px;
+    bottom: 20px;
+    opacity: 0;
+}
+
+.plus-zero, .plus-one, .plus-two, .plus-three {
+    animation: booster 1.5s ease-in;
+}
+
+@keyframes booster {
+    0%   {
+        left: -85px;
+        bottom: 20px;
+        opacity: 0;
+        height: 26.5px;
+        width: 26.5px;
+    }
+
+    25%  {
+        left: -80px;
+        bottom: 24px;
+        opacity: 1;
+    }
+
+    50%  {
+        left: -76px;
+        bottom: 29px;
+        opacity: 1;
+    }
+
+    75%  {
+        left: -73px;
+        bottom: 37px;
+        opacity: 0.4;
+    }
+
+    100% {
+        left: -70px;
+        bottom: 45px;
+        opacity: 0;
+        height: 53px;
+        width: 53px;
+    }
+}
 
 /* ================================================
 ==                    Page Styles                ==
