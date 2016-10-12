@@ -3,7 +3,7 @@
 ### **Goal**: Practice working with React by building a small personal project with it.  
 ___
 
-\*\* **IMPORTANT**: This [app](https://simplyphy.github.io/React-Devotion/) is designed exclusively for use on a **desktop or laptop**. \*\*
+\*\* **IMPORTANT**: This [app](https://simplyphy.github.io/React-Devotion/) is currently designed exclusively for use on a **desktop or laptop**. \*\*
 
 ### Instructions:
 - Add new people via the input box found near the middle of the screen.
