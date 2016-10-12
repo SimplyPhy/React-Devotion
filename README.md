@@ -3,7 +3,7 @@
 ### **Goal**: Practice working with React by building a small personal project with it.  
 ___
 
-\*\* **IMPORTANT**: This [app](https://simplyphy.github.io/React-Devotion/) is designed exclusively for use on a **desktop or laptop**. \*\*
+\*\* **IMPORTANT**: This [app](https://simplyphy.github.io/React-Devotion/) is currently designed exclusively for use on a **desktop or laptop**. \*\*
 
 ### Instructions:
 - Add new people via the input box found near the middle of the screen.
@@ -38,7 +38,7 @@ Therefore, if you have 100 DP, you require 22 DP (11% of 200) to reach from 'Dim
 ### Additional Information:
 The gamified motivational system described above doesn't entirely accurately describe the existing structure of the one I experiment with myself.
 Likewise, this app doesn't currently attempt to describe many key elements of that system.
-I'd like to build something more comprehensive and dynamic in the future, but in the meantime, feel free to message with with inquiries about it.
+I'd like to build something more comprehensive and dynamic in the future, but in the meantime, feel free to message me with inquiries about it.
 
 #### Primary Components:
 React, JSX, CSS3 animations, flexbox, spritesheets
