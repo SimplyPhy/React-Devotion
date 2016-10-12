@@ -2,12 +2,12 @@
 var PEOPLE = [
   {
     name: "Elon Musk",
-    points: 65700,
+    points: 51130,
     id: 1,
   },
   {
     name: "Brandon Sanderson",
-    points: 42250,
+    points: 38250,
     id: 2,
   },
   {
