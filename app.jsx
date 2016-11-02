@@ -53,7 +53,7 @@ var AddPersonForm = React.createClass({
     e.preventDefault();
 
     this.props.onAdd(this.state.name, this.state.points);
-    this.setState({name: "", points: ""});
+    this.setState({name: "", points: "", buttonBool: true});
   },
 
   render: function() {
