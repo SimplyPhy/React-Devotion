@@ -391,3 +391,4 @@ var Application = React.createClass({
 
 
 ReactDOM.render(<Application initialPeople={PEOPLE}/>, document.querySelector('.app'));
+
