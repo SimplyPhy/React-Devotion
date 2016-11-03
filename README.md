@@ -41,7 +41,7 @@ Likewise, this app doesn't currently attempt to describe many key elements of th
 I'd like to build something more comprehensive and dynamic in the future, but in the meantime, feel free to message me with inquiries about it.
 
 #### Primary Components:
-React, JSX, CSS3 animations, flexbox, spritesheets
+React, JSX, Gulp, CSS3 animations, flexbox, spritesheets
 
 #### Software Used:
 Photoshop, Affinity Photo, Sublime Text 3, Git, ImageOptim, Paletton
