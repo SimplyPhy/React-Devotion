@@ -40,7 +40,7 @@ The gamified motivational system described above doesn't entirely accurately des
 Likewise, this app doesn't currently attempt to describe many key elements of that system.
 I'd like to build something more comprehensive and dynamic in the future, but in the meantime, feel free to message me with inquiries about it.
 
-#### Primary Components:
+#### Primary Technologies Used:
 React, JSX, Gulp, CSS3 animations, flexbox, spritesheets
 
 #### Software Used:
