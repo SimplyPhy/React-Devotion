@@ -51,6 +51,7 @@ var AddPersonForm = React.createClass({
 
   onSubmit: function(e) {
     e.preventDefault();
+    document.activeElement.blur();
 
     this.props.onAdd(this.state.name, this.state.points);
     this.setState({name: "", points: "", buttonBool: true});
