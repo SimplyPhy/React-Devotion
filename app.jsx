@@ -53,7 +53,7 @@ var AddPersonForm = React.createClass({
     e.preventDefault();
 
     this.props.onAdd(this.state.name, this.state.points);
-    this.setState({name: "", points: "", buttonBool: true});
+    this.setState({name: "", points: ""});
   },
 
   render: function() {
@@ -391,4 +391,3 @@ var Application = React.createClass({
 
 
 ReactDOM.render(<Application initialPeople={PEOPLE}/>, document.querySelector('.app'));
-
